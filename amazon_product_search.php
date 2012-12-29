@@ -78,12 +78,13 @@ class Amazon_Product_Search {
 	 * Quick method to search a particula index, such as Books, DVDs etc
 	 * Just pass through keywords
 	 * @param $keywords String
+	 * @param $page Int
 	 * @param $index String - Default Books.
 	 * @param $raw	 Boolean
 	 * @return SimpleXML
 	**/
-	public function search ($keywords, $index = 'Books', $raw = false) {
-		$this->parameters(array('Keywords' => $keywords, 'SearchIndex' => $index));
+	public function search ($keywords, $page = 1, $index = 'Books', $raw = false) {
+		$this->parameters(array('Keywords' => $keywords, 'SearchIndex' => $index, 'ItemPage' => $page));
 		return $this->output($raw);
 	}
 
